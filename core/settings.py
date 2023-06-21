@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7x6)g$#068u97t=w8)=sar^v!6o0i3h8ukm$z(9^%h$a&2r_mk
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '*'
 ]
 
 
@@ -84,6 +84,9 @@ DATABASES = {
     }
 }
 
+FIXTURES_DIRS = (
+    os.path.join(BASE_DIR, 'fixtures/')
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
